@@ -1,0 +1,138 @@
+{
+  "input": {
+    "workflow": {
+      "3": {
+        "inputs": {
+          "seed": 682777853117454,
+          "steps": 26,
+          "cfg": 8,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "11",
+            0
+          ],
+          "positive": [
+            "6",
+            0
+          ],
+          "negative": [
+            "7",
+            0
+          ],
+          "latent_image": [
+            "13",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "6": {
+        "inputs": {
+          "text": "A teasing overhead selfie of a 35-year-old Japanese woman with a voluptuous build, long chestnut brown hair cascading over her shoulders, hazel eyes behind squared-rim glasses looking up shyly at the camera with a soft pout on her full pink lips, fair skin with a subtle blush, wearing a loose low-cut white blouse that&#39;s slipped to reveal the generous swell of her large pale breasts in a lacy black bra, one hand tugging at the neckline, soft home lighting in a cozy living room background with blurred furniture.\" alt=\"A teasing overhead selfie of a 35-year-old Japanese woman with a voluptuous build, long chestnut brown hair cascading over her shoulders, hazel eyes behind squared-rim glasses looking up shyly at the camera with a soft pout on her full pink lips, fair skin with a subtle blush, wearing a loose low-cut white blouse that&#39;s slipped to reveal the generous swell of her large pale breasts in a lacy black bra, one hand tugging at the neckline, soft home lighting in a cozy living room background with blurred furniture",
+          "clip": [
+            "34",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Positive Prompt)"
+        }
+      },
+      "7": {
+        "inputs": {
+          "text": ""
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Negative Prompt)"
+        }
+      },
+      "8": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "33",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "9": {
+        "inputs": {
+          "filename_prefix": "ComfyUI",
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "11": {
+        "inputs": {
+          "value": 3,
+          "model": [
+            "32",
+            0
+          ]
+        },
+        "class_type": "ModelSamplingAuraFlow",
+        "_meta": {
+          "title": "ModelSamplingAuraFlow"
+        }
+      },
+      "13": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptySD3LatentImage",
+        "_meta": {
+          "title": "EmptySD3LatentImage"
+        }
+      },
+      "32": {
+        "inputs": {
+          "ckpt_name": "z-image"
+        },
+        "class_type": "CheckpointLoaderSimple",
+        "_meta": {
+          "title": "CheckpointLoaderSimple"
+        }
+      },
+      "33": {
+        "inputs": {
+          "text": "pig-flux-vae"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "34": {
+        "inputs": {
+          "text": "qwen-4b"
+        },
+        "class_type": "CLIPLoader",
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      }
+    }
+  }
+}
